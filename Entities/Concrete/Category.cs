@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entities.Abstract;
 
 namespace Entities.Concrete
-{//Çıplak Class kalmasın
+{
     public class Category:IEntity
     {
         public int CategoryId { get; set; }

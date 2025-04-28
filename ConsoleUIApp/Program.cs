@@ -4,7 +4,7 @@ using DAO.Abstract;
 
 namespace ConssoleUIApp
 {
-    class Program //Kullanıcının doğrudan göreceği çıktı ve giriş işlemleri burada olur.
+    class Program 
     {   //Open closed principle: Yazılıma yeni bir özellik ekliyorsak mevcuttaki hiçbir koda dokunulmaz.
         static void Main(string[] args)
         {
