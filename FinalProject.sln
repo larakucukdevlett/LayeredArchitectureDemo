@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{25C450D6-E584-4FEB-8EE9-4AFB14D2EADA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dao", "DAO\Dao.csproj", "{25C450D6-E584-4FEB-8EE9-4AFB14D2EADA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BO", "BO\BO.csproj", "{757014B1-2516-494A-9A2A-36AC733E4AA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bo", "BO\Bo.csproj", "{757014B1-2516-494A-9A2A-36AC733E4AA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{75AFD3CC-E567-44B4-AB5E-2EF7E93392CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{75AFD3CC-E567-44B4-AB5E-2EF7E93392CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUIApp", "ConsoleUIApp\ConsoleUIApp.csproj", "{2368EDDA-044F-4A1D-821A-9725AFF543B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleUIApp", "ConsoleUIApp\ConsoleUIApp.csproj", "{2368EDDA-044F-4A1D-821A-9725AFF543B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{A417C270-91CC-493E-B8D3-5C3E7A31BA1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2368EDDA-044F-4A1D-821A-9725AFF543B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2368EDDA-044F-4A1D-821A-9725AFF543B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2368EDDA-044F-4A1D-821A-9725AFF543B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A417C270-91CC-493E-B8D3-5C3E7A31BA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A417C270-91CC-493E-B8D3-5C3E7A31BA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A417C270-91CC-493E-B8D3-5C3E7A31BA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A417C270-91CC-493E-B8D3-5C3E7A31BA1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

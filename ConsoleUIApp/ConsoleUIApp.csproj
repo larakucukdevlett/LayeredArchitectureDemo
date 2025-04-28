@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BO\BO.csproj" />
-    <ProjectReference Include="..\DAO\DAO.csproj" />
+    <ProjectReference Include="..\BO\Bo.csproj" />
+    <ProjectReference Include="..\DAO\Dao.csproj" />
     <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
 
