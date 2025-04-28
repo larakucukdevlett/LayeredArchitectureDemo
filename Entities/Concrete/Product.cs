@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Product:IEntity // public demek bu classa diğer katmanlarda ulaşabilsin
-    { //internal demek sadece entitiesdekiler ulaşabilir demek
+    public class Product:IEntity 
+    {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }
         public string ProductName { get; set; }
