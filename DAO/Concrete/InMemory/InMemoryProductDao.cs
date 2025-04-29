@@ -1,5 +1,6 @@
 ﻿using DAO.Abstract;
 using Entities.Concrete;
+using Entities.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,6 +56,11 @@ namespace DAO.Concrete.InMemory
         {
             return _products.Where(p=>p.CategoryId==categoryId).ToList();
             //WHERE ile bu koşulu döndüren tüm kategorileri listeleyip döndürdü
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Product product)
