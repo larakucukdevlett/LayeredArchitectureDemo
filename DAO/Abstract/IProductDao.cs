@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAcess;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAO.Abstract
 {
-    public interface IProductDao:IEntityRepository<Product> //Product IEntityden miras alıyor
+    public interface IProductDao : IEntityRepository<Product> //Product IEntityden miras alıyor
     {
         //Product tableında hangi işlemlerin yapılacağının iskeleti oluşturulucak.
+         
     }
+
+
 }
