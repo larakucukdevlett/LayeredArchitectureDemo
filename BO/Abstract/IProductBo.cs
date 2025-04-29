@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using Entities.DTO;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,12 @@ namespace BO.Abstract
 {
     public interface IProductBo //productla ilgili business işlemleri burda oluşturuluyor.
     {
-        List<Product> GetAll();
-        //Producta ulaşmak için BO'ya sağ tıklayıp add reference ile entities ve DAO ya referans ekledik.
-        List<Product> GetAllByCategoryId(int id); //category id ye göre ürün getirme
-        List<Product> GetByUnitPrice(decimal min, decimal max);
-        public List<ProductDetailDto> GetProductDetails();
+        IDataResult<List<Product>> GetAll();
+        IDataResult<List<Product>> GetAllByCategoryId(int id); //category id ye göre ürün getirme
+        IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max);
+        IDataResult<List<ProductDetailDto>> GetProductDetails();
+        IDataResult<Product> GetById(int productId);
+        IResult Add(Product product);
     }
 
 }

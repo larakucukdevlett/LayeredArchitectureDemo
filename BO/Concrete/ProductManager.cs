@@ -1,4 +1,6 @@
-﻿using BO.Abstract;
+﻿using Bo.Constants;
+using BO.Abstract;
+using Core.Utilities.Results;
 using DAO.Abstract;
 using DAO.Concrete.InMemory;
 using Entities.Concrete;
@@ -19,23 +21,48 @@ namespace BO.Concrete
         {
             _productDao = productDao;
         }
-        public List<Product> GetAll()
+ 
+        public IDataResult<List<Product>> GetAll()
         {
-            //iş kodları
-            return _productDao.GetAll();
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
+            }
+            return new SuccessDataResult<List<Product>>(_productDao.GetAll(),Messages.ProductsListed);
         }
-        public List<Product> GetAllByCategoryId(int id)
+        public IDataResult<List<Product>> GetAllByCategoryId(int id)
         {
-            return _productDao.GetAll(p=>p.CategoryId==id);
-        }
-        public List<Product> GetByUnitPrice(decimal min, decimal max)
-        {
-            return _productDao.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max);
+            return new SuccessDataResult<List<Product>>(_productDao.GetAll(p=>p.CategoryId==id));
         }
 
-        public List<ProductDetailDto> GetProductDetails()
+        public IDataResult<Product> GetById(int productId)
         {
-            return _productDao.GetProductDetails();
+            return new SuccessDataResult<Product>(_productDao.Get(p=>p.ProductId==productId));
+        }
+
+        public SuccessDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
+        {
+            return new SuccessDataResult<List<Product>>(_productDao.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));
+        }
+
+        public IDataResult<List<ProductDetailDto>> GetProductDetails()
+        {
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDao.GetProductDetails());
+        }
+
+        public IResult Add(Product product)
+        {
+            if (product.ProductName.Length < 2)
+            {
+                return new ErrorResult(Messages.ProductNameInvalid);
+            }
+            _productDao.Add(product);
+            return new SuccessResult(Messages.ProductAdded);
+        }
+
+        IDataResult<List<Product>> IProductBo.GetByUnitPrice(decimal min, decimal max)
+        {
+            throw new NotImplementedException();
         }
     }
 }
