@@ -1,14 +1,31 @@
-﻿using BO.Abstract;
+﻿using Bo.Concrete;
+using BO.Abstract;
 using BO.Concrete;
 using DAO.Abstract;
+using DAO.Concrete.EntityFramework;
 
 namespace ConssoleUIApp
 {
     class Program 
-    {   //Open closed principle: Yazılıma yeni bir özellik ekliyorsak mevcuttaki hiçbir koda dokunulmaz.
+    {   
         static void Main(string[] args)
         {
-            IProductBo productManager= new ProductManager(new EfProductDao());
+            //ProductTest();
+            CategoryTest();
+        }
+
+        private static void CategoryTest()
+        {
+            CategoryManager categoryManager = new CategoryManager(new EFCategoryDao());
+            foreach (var category in categoryManager.GetAll())
+            {
+                Console.WriteLine(category.CategoryName);
+            }
+        }
+
+        private static void ProductTest()
+        {
+            ProductManager productManager = new ProductManager(new EfProductDao());
             foreach (var product in productManager.GetAll())
             {
                 Console.WriteLine(product.ProductName);
