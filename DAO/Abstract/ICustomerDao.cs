@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace DAO.Abstract
 {
-    public interface ICustomerDao:IEntityRepository<Customer> //customer IEntityden miras alıyor
+    public interface ICustomerDao:IEntityRepository<Customer> 
     {
-        //customer tableında hangi işlemler yapılacağının iskeleti oluşturulur.
+        //Specifying the operations for Customer table
     }
 }

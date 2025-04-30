@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace BO.Concrete
 {
-    public class ProductManager : IProductBo //interfacete initialize edilen metodları concreteleştirdik.
+    public class ProductManager : IProductBo 
     {
         IProductDao _productDao; //injecton yaptık.DAO katmanına bağımlıdır.
 
@@ -24,7 +24,7 @@ namespace BO.Concrete
  
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 23)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -38,11 +38,6 @@ namespace BO.Concrete
         public IDataResult<Product> GetById(int productId)
         {
             return new SuccessDataResult<Product>(_productDao.Get(p=>p.ProductId==productId));
-        }
-
-        public SuccessDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
-        {
-            return new SuccessDataResult<List<Product>>(_productDao.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
@@ -62,7 +57,7 @@ namespace BO.Concrete
 
         IDataResult<List<Product>> IProductBo.GetByUnitPrice(decimal min, decimal max)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Product>>(_productDao.GetAll(p => p.UnitPrice >= min && p.UnitPrice <= max));
         }
     }
 }

@@ -12,7 +12,7 @@ namespace DAO.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true"); //SQL server kullanıcaz
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\projectmodels;Database=Northwind;Trusted_Connection=true"); //SQL server kullanıcaz
         }
 
         public DbSet<Product> Products { get; set; }

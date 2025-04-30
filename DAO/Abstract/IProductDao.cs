@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace DAO.Abstract
 {
-    public interface IProductDao : IEntityRepository<Product> //Product IEntityden miras alıyor
+    public interface IProductDao : IEntityRepository<Product> 
     {
-        //Product tableında hangi işlemlerin yapılacağının iskeleti oluşturulucak.
-         List<ProductDetailDto> GetProductDetails();  
+        //Specifying the operations for Product table
+         List<ProductDetailDto> GetProductDetails();   //implemented in EfProductDao
     }
 
 

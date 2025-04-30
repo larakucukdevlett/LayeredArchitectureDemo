@@ -1,4 +1,5 @@
-﻿using DAO.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DAO.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DAO.Concrete.EntityFramework
 {
-    internal class EfCustomerDao : ICustomerDao
+    public class EfCustomerDao : EfEntityRepositoryBase<Customer, NorthwindContext>, ICustomerDao
     {
         public void Add(Customer entity)
         {

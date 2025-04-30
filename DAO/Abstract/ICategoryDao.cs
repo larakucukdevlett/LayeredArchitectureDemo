@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DAO.Abstract
 {
-   public interface ICategoryDao:IEntityRepository<Category> //category IEntityden miras alıyor
+   public interface ICategoryDao:IEntityRepository<Category> 
     {
-        //category databaseinde hangi işlemleri yapacağımızı metotlar halinde yazıcaz.
+       
  
     }
 }

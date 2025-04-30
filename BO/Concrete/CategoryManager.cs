@@ -11,7 +11,7 @@ namespace Bo.Concrete
 {
     public class CategoryManager : ICategoryBo
     {
-        ICategoryDao _categoryDao;
+        ICategoryDao _categoryDao; //reference to DAO
 
         public CategoryManager(ICategoryDao categoryDao)
         {
