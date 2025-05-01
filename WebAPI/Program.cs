@@ -8,8 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<IProductBo, ProductManager>();
-builder.Services.AddSingleton<IProductDao, EfProductDao>();
+//builder.Services.AddSingleton<IProductBo, ProductManager>();
+//builder.Services.AddSingleton<IProductDao, EfProductDao>();
 
 var app = builder.Build();
 
